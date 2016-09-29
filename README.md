@@ -9,6 +9,7 @@
 <h2>支持pod导入</h2>
 <p>pod 'ASPageViewController', '~> 0.0.1'</p>
 <p>github链接：https://github.com/zhanghongdou/ASPageViewController.git</p>
+<p>随后为大家分享swift3.0封装的此库，希望大家能够多提宝贵的意见，谢谢</p>
 <h2>ASPageViewController和WMPageController的比较</h2>
 <p>WMPageController使用的是UIScrollView实现的这个功能，避免不了的，造成代码过多，本小编封装的ASPageViewController是借助UIPageViewController实现的，代码估计只有前者的三分之一吧，这也是本小编感觉比较荣幸的，但是还是很佩服WMPageController的作者的封装，本小编也在其中学到了不少的知识点，在这里也感谢WMPageController的作者，还有一点就是WMPageController可以实现添加作为导航栏的titleView，本小编封装的ASPageViewController暂为实现这个点，本小编在后续工程中会不断完善，谢谢大家的支持，下面给大家献上具体的接口和gif效果图</p>
 <h3>效果图1（带有下划线的样式）</h3>
