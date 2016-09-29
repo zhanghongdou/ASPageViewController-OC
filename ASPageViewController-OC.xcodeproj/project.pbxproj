@@ -18,7 +18,7 @@
 		047475771D9CDAFB0011966B /* A3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047475701D9CDAFB0011966B /* A3ViewController.m */; };
 		047475781D9CDAFB0011966B /* A4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047475721D9CDAFB0011966B /* A4ViewController.m */; };
 		047475791D9CDAFB0011966B /* A5ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047475741D9CDAFB0011966B /* A5ViewController.m */; };
-		047475841D9CDB2D0011966B /* ASSPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0474757C1D9CDB2D0011966B /* ASSPageViewController.m */; };
+		047475841D9CDB2D0011966B /* ASPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0474757C1D9CDB2D0011966B /* ASPageViewController.m */; };
 		047475851D9CDB2D0011966B /* ASTopLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0474757F1D9CDB2D0011966B /* ASTopLabel.m */; };
 		047475861D9CDB2D0011966B /* ASTopLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 047475811D9CDB2D0011966B /* ASTopLine.m */; };
 		047475871D9CDB2D0011966B /* ASTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047475831D9CDB2D0011966B /* ASTopView.m */; };
@@ -46,7 +46,7 @@
 		047475731D9CDAFB0011966B /* A5ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A5ViewController.h; sourceTree = "<group>"; };
 		047475741D9CDAFB0011966B /* A5ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A5ViewController.m; sourceTree = "<group>"; };
 		0474757B1D9CDB2D0011966B /* ASPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPageViewController.h; sourceTree = "<group>"; };
-		0474757C1D9CDB2D0011966B /* ASSPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASSPageViewController.m; sourceTree = "<group>"; };
+		0474757C1D9CDB2D0011966B /* ASPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPageViewController.m; sourceTree = "<group>"; };
 		0474757D1D9CDB2D0011966B /* ASPageViewConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPageViewConst.h; sourceTree = "<group>"; };
 		0474757E1D9CDB2D0011966B /* ASTopLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTopLabel.h; sourceTree = "<group>"; };
 		0474757F1D9CDB2D0011966B /* ASTopLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTopLabel.m; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				0474757B1D9CDB2D0011966B /* ASPageViewController.h */,
-				0474757C1D9CDB2D0011966B /* ASSPageViewController.m */,
+				0474757C1D9CDB2D0011966B /* ASPageViewController.m */,
 				0474757D1D9CDB2D0011966B /* ASPageViewConst.h */,
 				0474757E1D9CDB2D0011966B /* ASTopLabel.h */,
 				0474757F1D9CDB2D0011966B /* ASTopLabel.m */,
@@ -206,7 +206,7 @@
 			files = (
 				047475761D9CDAFB0011966B /* A2ViewController.m in Sources */,
 				047475781D9CDAFB0011966B /* A4ViewController.m in Sources */,
-				047475841D9CDB2D0011966B /* ASSPageViewController.m in Sources */,
+				047475841D9CDB2D0011966B /* ASPageViewController.m in Sources */,
 				047475791D9CDAFB0011966B /* A5ViewController.m in Sources */,
 				047475871D9CDB2D0011966B /* ASTopView.m in Sources */,
 				0474755C1D9CDABE0011966B /* ViewController.m in Sources */,
@@ -368,6 +368,7 @@
 				0474756A1D9CDABE0011966B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
