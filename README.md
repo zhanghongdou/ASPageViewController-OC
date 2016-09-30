@@ -7,7 +7,7 @@
 <h2>什么是ASPageViewController</h2>
 <p>我们在日常的app中经常会用到实现手势滑动翻页和点击翻页来实现对试图控制器控制的功能，趁着最近不忙，封装了一个实现这种功能的库分享给大家，希望大家能够喜欢，同时也希望大家能够提出宝贵的意见，谢谢！</p>
 <h2>支持pod导入</h2>
-<p>pod 'ASPageViewController', '~> 0.0.1'</p>
+<p>pod 'ASPageViewController', '~> 1.0.0'</p>
 <p>github链接：https://github.com/zhanghongdou/ASPageViewController.git</p>
 <p>随后为大家分享swift3.0封装的此库，希望大家能够多提宝贵的意见，谢谢</p>
 <h2>ASPageViewController和WMPageController的比较</h2>
