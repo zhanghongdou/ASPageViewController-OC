@@ -121,9 +121,9 @@
 		0474757A1D9CDB150011966B /* ASPageViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0474757D1D9CDB2D0011966B /* ASPageViewConst.h */,
 				0474757B1D9CDB2D0011966B /* ASPageViewController.h */,
 				0474757C1D9CDB2D0011966B /* ASPageViewController.m */,
-				0474757D1D9CDB2D0011966B /* ASPageViewConst.h */,
 				0474757E1D9CDB2D0011966B /* ASTopLabel.h */,
 				0474757F1D9CDB2D0011966B /* ASTopLabel.m */,
 				047475801D9CDB2D0011966B /* ASTopLine.h */,

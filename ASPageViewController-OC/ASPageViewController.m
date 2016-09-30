@@ -132,12 +132,17 @@
 //结束之后调用
 -(void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed
 {
-    _currentVCIndex = [_vcArray indexOfObject:_pageViewController.viewControllers[0]];
+    if (completed && finished) {
+        _currentVCIndex = [_vcArray indexOfObject:_pageViewController.viewControllers[0]];
+    }
 }
 
 //MARK:scrollView的协议方法
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    if (scrollView.contentOffset.x > kScreenWidth * 2 || scrollView.contentOffset.x < 0) {
+        return;
+    }
     if (_isClick) {
         //如果是点击的时候执行这里的方法
         [_topView clickLabelMethod:(int)_currentVCIndex withContentOffSetX:scrollView.contentOffset.x withToIndex:(int)_willToIndex];

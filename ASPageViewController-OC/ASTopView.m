@@ -20,6 +20,11 @@
     CGFloat _addSpace;
     //用来保存当前所在的label
     ASTopLabel *_selectLabel;
+    
+    //设置一个数组存储所有的label
+    NSMutableArray *_allLabelArray;
+    //设置一个保存上一次的label
+    ASTopLabel *_lastLabel;
 }
 @end
 
@@ -28,7 +33,8 @@
 -(id)initWithFrame:(CGRect)frame andTitles:(NSArray *)titles
 {
     if (self = [super initWithFrame:frame]) {
-//        self.backgroundColor = [UIColor whiteColor];
+        //        self.backgroundColor = [UIColor whiteColor];
+        _allLabelArray = [NSMutableArray array];
         _titlesArray = [NSArray arrayWithArray:titles];
         _eachItemFrameArray = [NSMutableArray array];
     }
@@ -83,7 +89,7 @@
     _bottomLine = [[ASTopLine alloc]initWithFrame:CGRectMake(0, self.frame.size.height - 2, _scrollView.contentSize.width, ASBottomLineHeight)];
     _bottomLine.backgroundColor = [UIColor whiteColor];
     _bottomLine.color = self.lineColor.CGColor;
-//    有了这个宽度之后我们就来分配的每一个item的frame
+    //    有了这个宽度之后我们就来分配的每一个item的frame
     _bottomLine.itemFrames = _eachItemFrameArray;
     [_scrollView addSubview:_bottomLine];
     [_bottomLine setwithCurrentIndex:0 WithContentOffSetX:kScreenWidth WithTopSpaceWidth:self.topSpaceWidth];
@@ -100,10 +106,35 @@
         ASTopLabel *currentLabel = (ASTopLabel *)[self viewWithTag:currentTag];
         ASTopLabel *nextlabel = (ASTopLabel *)[self viewWithTag:toTag];
         _selectLabel = nextlabel;
+        _lastLabel = currentLabel;
         //求出rate
         CGFloat rate = (fabs(contentOffSetX - kScreenWidth)) / kScreenWidth;
+        
+        for (ASTopLabel *label in _allLabelArray) {
+            if (label == currentLabel || label == nextlabel) {
+                
+            }else{
+                label.rate = 0;
+            }
+        }
         currentLabel.rate = 1 - rate;
         nextlabel.rate = rate;
+    }else{
+        ASTopLabel *currentLabel = (ASTopLabel *)[self viewWithTag:currentTag];
+        ASTopLabel *nextlabel = (ASTopLabel *)[self viewWithTag:toTag];
+        _selectLabel = nextlabel;
+        _lastLabel = currentLabel;
+        for (ASTopLabel *label in _allLabelArray) {
+            if (label == currentLabel || label == nextlabel) {
+                
+            }else{
+                label.rate = 0;
+            }
+        }
+    }
+    if ((contentOffSetX - kScreenWidth) == 0 && _lastLabel.tag - ASTopLabelTag != currentIndex) {
+        _selectLabel.rate = 1;
+        _lastLabel.rate = 0;
     }
     [self refreshCurrenrItemToCenter];
 }
@@ -118,11 +149,20 @@
         ASTopLabel *currentLabel = (ASTopLabel *)[self viewWithTag:currentTag];
         ASTopLabel *nextlabel = (ASTopLabel *)[self viewWithTag:currentTag - 1];
         _selectLabel = nextlabel;
+        _lastLabel = currentLabel;
         //求出rate
         CGFloat rate = (fabs(XXX - kScreenWidth)) / kScreenWidth;
+        for (ASTopLabel *label in _allLabelArray) {
+            if (label == currentLabel || label == nextlabel) {
+                
+            }else{
+                label.rate = 0;
+            }
+        }
         currentLabel.rate = 1 - rate;
         nextlabel.rate = rate;
-    }else{
+    }
+    if ((XXX - kScreenWidth) > 0) {
         ASTopLabel *currentLabel = (ASTopLabel *)[self viewWithTag:currentTag];
         ASTopLabel *nextlabel = (ASTopLabel *)[self viewWithTag:currentTag + 1];
         //去最后一个
@@ -131,10 +171,23 @@
         }else{
             _selectLabel = nextlabel;
         }
+        _lastLabel = currentLabel;
         //求出rate
         CGFloat rate = (fabs(XXX - kScreenWidth)) / kScreenWidth;
+        
+        for (ASTopLabel *label in _allLabelArray) {
+            if (label == currentLabel || label == nextlabel) {
+                
+            }else{
+                label.rate = 0;
+            }
+        }
         currentLabel.rate = 1 - rate;
         nextlabel.rate = rate;
+    }
+    if ((XXX - kScreenWidth) == 0 && _lastLabel.tag - ASTopLabelTag != curindex) {
+        _selectLabel.rate = 1;
+        _lastLabel.rate = 0;
     }
     [self refreshCurrenrItemToCenter];
 }
@@ -148,7 +201,7 @@
         max += [self.itemWidthArray[i] floatValue];
     }
     if (max < kScreenWidth) {
-//        有空格
+        //        有空格
         //得出空格的大小
         _addSpace = (kScreenWidth - max) / (self.itemWidthArray.count + 1);
         for (int i = 0; i < self.itemWidthArray.count; i++) {
@@ -188,6 +241,7 @@
         label.normalTitleColor = self.normalItemTitleColor;
         label.selectedTitleColor = self.selectItemTitleColor;
         label.userInteractionEnabled = YES;
+        [_allLabelArray addObject:label];
         //调用方法设置第一个选中状态，其他的不是选中状态
         if (i == 0) {
             [label selectedLabelNOAnimation];
@@ -232,11 +286,11 @@
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end
