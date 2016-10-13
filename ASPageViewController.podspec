@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
 
 
   s.name         = "ASPageViewController"
-  s.version      = "1.0.1"
+  s.version      = "1.0.0"
   s.summary      = "A view controller is used to implement gestures sliding page and click on the page."
 
   s.description  = <<-DESC 
